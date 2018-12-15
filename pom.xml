@@ -161,6 +161,24 @@
       <version>2.9.7</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.16.22</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>jstl</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -202,7 +220,7 @@
           <version>2.2</version>
           <configuration>
             <path>/</path>
-            <port>8080</port>
+            <port>8081</port>
             <uriEncoding>UTF-8</uriEncoding>
             <url>http://localhost:8080/manager/html</url>
             <server>tomcat7</server>

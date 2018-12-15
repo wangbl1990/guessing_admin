@@ -1,12 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="zh-CN">
-<head>W
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>广告管理</title>
+    <title>订单管理</title>
 
     <!-- CSS核心 -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -33,15 +31,31 @@
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>广告管理</h5>
+                    <h5>订单管理</h5>
                 </div>
 
                 <div class="ibox-content" style="padding-bottom:0;">
                     <div class="row">
-
-                        <div class="ibox-btns" style="margin-top:10px;margin-left: 15px">
-                            <button class="btn btn-primary btn-xs" type="button" id="srhBtn" >新建banner图</button>
-                        </div>
+                        <form class="form-horizontal" id="selected" name="selected">
+                            <table class="table table-bordered" style="margin-bottom: 0;">
+                                <tbody>
+                                <tr>
+                                    <td class="input-group-addon" width="20%">
+                                        用户：
+                                    </td>
+                                    <td width="30%">
+                                        <input type="text" class="form-control"  id="id" name="id">
+                                    </td>
+                                    <td class="input-group-addon" width="15%">订单号：</td>
+                                    <td width="30%">
+                                        <input type="text" class="form-control" id="title" name="title">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="ibox-btns pull-right" style="margin-top:10px;">
+                                <button class="btn btn-primary btn-xs" type="button" id="srhBtn" >查询</button>
+                            </div>
 
                         </form>
                         <div class="col-sm-12">
@@ -50,25 +64,15 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>标题</th>
-                                    <th>图片</th>
-                                    <th>链接</th>
+                                    <th>用户</th>
+                                    <th>订单编号</th>
+                                    <th>订单米粒</th>
+                                    <th>水位格式</th>
+                                    <th>状态</th>
                                     <th>管理</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${bannerList}" var="item">
-                                        <tr>
-                                            <td>${item.id}</td>
-                                            <td>${item.title}</td>
-                                            <td>${item.picPath}</td>
-                                            <td>${item.picLink}</td>
-                                            <td>
-                                                <button class="btn btn-primary btn-xs" type="button" >编辑</button>
-                                                <button class="btn btn-primary btn-xs" type="button" >删除</button>
-                                            </td>
-                                        </tr>
-                                    </c:forEach>
                                 <!-- JS输出JOSN数据 -->
                                 </tbody>
                             </table>

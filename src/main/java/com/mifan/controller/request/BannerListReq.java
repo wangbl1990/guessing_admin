@@ -1,0 +1,16 @@
+package com.mifan.controller.request;
+
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class BannerListReq {
+
+    private int pageNo;
+
+    private int pageSize;
+}
