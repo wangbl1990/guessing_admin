@@ -36,9 +36,9 @@ public class OrderListRes {
 
     private String eventName;
 
-    private Long fillAmount;
+    private BigDecimal fillAmount;
 
-    private Long fillPrice;
+    private BigDecimal fillPrice;
 
     private String placedResult;
 
