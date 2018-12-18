@@ -1,5 +1,6 @@
 package com.mifan.controller;
 
+import com.mifan.controller.request.AddBannerReq;
 import com.mifan.controller.request.BannerListReq;
 import com.mifan.controller.response.BannerListRes;
 import com.mifan.domain.BannerDomain;
@@ -25,6 +26,12 @@ public class BannerController {
     @RequestMapping("list")
     public String bannerList(Model model, BannerListReq bannerListReq){
         List<BannerListRes> bannerListResList = bannerDomain.bannerList(bannerListReq);
+        model.addAttribute("bannerList",bannerListResList);
+        return "banner_list";
+    }
+
+    public String add(Model model, AddBannerReq addBannerReq){
+        List<BannerListRes> bannerListResList =  bannerDomain.add(addBannerReq);
         model.addAttribute("bannerList",bannerListResList);
         return "banner_list";
     }

@@ -2,7 +2,7 @@
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="zh-CN">
-<head>W
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,6 +17,8 @@
     <link href="/static/css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="/static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
     <link href="/static/css/plugins/pages/jquery.page.css" rel="stylesheet">
+    <link href="/static/css/plugins/fileinput/fileinput.min.css" rel="stylesheet">
+
 
     <!-- CSS页面 -->
     <link href="/static/css/style.min.css" rel="stylesheet">
@@ -40,7 +42,7 @@
                     <div class="row">
 
                         <div class="ibox-btns" style="margin-top:10px;margin-left: 15px">
-                            <button class="btn btn-primary btn-xs" type="button" id="srhBtn" >新建banner图</button>
+                            <button class="btn btn-primary btn-xs" type="button" id="addBtn" >新建banner图</button>
                         </div>
 
                         </form>
@@ -89,6 +91,67 @@
 
 </div>
 
+<div class="modal inmodal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true" >
+    <div class="modal-dialog modal-lg" style="width: 600px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span
+                        aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title">新建</h4>
+            </div>
+            <div class="modal-body">
+
+                <!-- 查询部分 开始 -->
+                <div class="ibox-content" style="padding:0; border-top:none;width: auto;">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form class="form-horizontal" id="borrowerQueryForm">
+                                <table class="table table-bordered" style="margin-bottom: 0;">
+                                    <tbody>
+                                    <tr>
+                                        <td class="input-group-addon" width="15%">
+                                            标题
+                                        </td>
+                                        <td width="25%">
+                                            <input type="text" name="title" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="input-group-addon" width="15%">图片</td>
+                                        <td width="25%">
+                                            <form class="form-horizontal validate[required]"  enctype="multipart/form-data" method="post"  id="uploadForm">
+                                                <input id="fileinput" name="picPath" multiple type="file">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="input-group-addon" width="15%">链接</td>
+                                        <td>
+                                            <input type="text" name="picLink" class="form-control">
+                                        </td>
+                                    </tr>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="panel-footer clear">
+                                    <div class="pull-right">
+                                        <button class="btn btn-primary btn-xs" type="button" id="srhSmtBtn">
+                                            新增
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- 查询部分 结束 -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <!-- JS核心 -->
 <script src="/static/js/jquery.min.js"></script>
@@ -102,7 +165,7 @@
 <script src="/static/js/plugins/pages/jquery.page.js"></script>
 
 <!-- JS页面 -->
-<script src="/static/js/pages/project/p_history_list.js"></script>
+<script src="/static/js/pages/project/p_banner.js"></script>
 
 </body>
 </html>
