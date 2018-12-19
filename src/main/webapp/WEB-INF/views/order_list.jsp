@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="zh-CN">
 <head>
@@ -37,6 +39,9 @@
                 <div class="ibox-content" style="padding-bottom:0;">
                     <div class="row">
                         <form class="form-horizontal" id="selected" name="selected">
+
+                            <input type="hidden" id="currPage" value="${orderList.pageNum}">
+                            <input type="hidden" id="pageCount" value="${orderList.pages}">
                             <table class="table table-bordered" style="margin-bottom: 0;">
                                 <tbody>
                                 <tr>
@@ -53,7 +58,7 @@
                                 </tr>
                                 </tbody>
                             </table>
-                            <div class="ibox-btns pull-right" style="margin-top:10px;">
+                            <div class="ibox-btns pull-right" style="margin-top:10px;margin-right: 15px;">
                                 <button class="btn btn-primary btn-xs" type="button" id="srhBtn" >查询</button>
                             </div>
 
@@ -73,7 +78,20 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <!-- JS输出JOSN数据 -->
+                                <c:forEach items="${orderList.list}" var="item">
+                                    <tr>
+                                        <td>${item.orderId}</td>
+                                        <td>${item.userName}</td>
+                                        <td>${item.orderId}</td>
+                                        <td>${item.requestAmount}</td>
+                                        <td>-</td>
+                                        <td>${item.status}</td>
+                                        <td>
+                                            <button class="btn btn-primary btn-xs" type="button" >编辑</button>
+                                            <button class="btn btn-primary btn-xs" type="button" >删除</button>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                             <!-- 表格部分 结束 -->
@@ -106,7 +124,7 @@
 <script src="/static/js/plugins/pages/jquery.page.js"></script>
 
 <!-- JS页面 -->
-<script src="/static/js/pages/project/p_history_list.js"></script>
+<script src="/static/js/pages/project/order_list.js"></script>
 
 </body>
 </html>

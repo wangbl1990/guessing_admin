@@ -44,9 +44,11 @@
                         <div class="ibox-btns" style="margin-top:10px;margin-left: 15px">
                             <button class="btn btn-primary btn-xs" type="button" id="addBtn" >新建banner图</button>
                         </div>
-
+                        <form id = "listForm">
+                            <input type="hidden" id="currPage" value="${bannerList.pageNum}">
+                            <input type="hidden" id="pageCount" value="${bannerList.pages}">
                         </form>
-                        <div class="col-sm-12">
+                        <div class="col-sm-12" style="height: auto;">
                             <!-- 表格部分 开始 -->
                             <table id="table">
                                 <thead>
@@ -59,7 +61,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${bannerList}" var="item">
+                                    <c:forEach items="${bannerList.list}" var="item">
                                         <tr>
                                             <td>${item.id}</td>
                                             <td>${item.title}</td>
@@ -71,7 +73,6 @@
                                             </td>
                                         </tr>
                                     </c:forEach>
-                                <!-- JS输出JOSN数据 -->
                                 </tbody>
                             </table>
                             <!-- 表格部分 结束 -->
@@ -165,7 +166,7 @@
 <script src="/static/js/plugins/pages/jquery.page.js"></script>
 
 <!-- JS页面 -->
-<script src="/static/js/pages/project/p_banner.js"></script>
+<script src="/static/js/pages/project/banner.js"></script>
 
 </body>
 </html>

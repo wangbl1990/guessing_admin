@@ -1,5 +1,8 @@
 package com.mifan.domain;
 
+import com.github.pagehelper.PageInfo;
+import com.mifan.controller.request.OrderListReq;
+import com.mifan.controller.request.SettleOrderListReq;
 import com.mifan.controller.response.OrderListRes;
 import com.mifan.controller.response.SettleOrderListRes;
 import org.springframework.stereotype.Component;
@@ -17,7 +20,7 @@ public class OrderDomain {
      * 订单列表
      * @return
      */
-    public List<OrderListRes> orderList() {
+    public PageInfo<OrderListRes> orderList(OrderListReq orderListReq) {
 
         List<OrderListRes> list = new ArrayList<OrderListRes>();
 
@@ -38,13 +41,15 @@ public class OrderDomain {
         res.setUserCode("123");
         res.setUserName("张三");
         list.add(res);
-        return list;
+        PageInfo<OrderListRes> pageInfo = new PageInfo<>(list);
+        pageInfo.setList(list);
+        return pageInfo;
     }
 
     /**
      * 注单列表
      */
-    public List<SettleOrderListRes> settleOrderList() {
+    public PageInfo<SettleOrderListRes> settleOrderList(SettleOrderListReq settleOrderListReq) {
 
         List<SettleOrderListRes> settleOrderList = new ArrayList<SettleOrderListRes>();
         SettleOrderListRes res = new SettleOrderListRes();
@@ -60,7 +65,10 @@ public class OrderDomain {
         res.setStatus("已结算");
         res.setType("1");
         res.setUserNikeName("马云");
+        res.setId("1");
         settleOrderList.add(res);
-        return settleOrderList;
+        PageInfo<SettleOrderListRes> pageInfo = new PageInfo<SettleOrderListRes>(settleOrderList);
+        pageInfo.setList(settleOrderList);
+        return pageInfo;
     }
 }

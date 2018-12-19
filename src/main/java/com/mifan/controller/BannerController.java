@@ -1,5 +1,6 @@
 package com.mifan.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.mifan.controller.request.AddBannerReq;
 import com.mifan.controller.request.BannerListReq;
 import com.mifan.controller.response.BannerListRes;
@@ -25,7 +26,7 @@ public class BannerController {
 
     @RequestMapping("list")
     public String bannerList(Model model, BannerListReq bannerListReq){
-        List<BannerListRes> bannerListResList = bannerDomain.bannerList(bannerListReq);
+        PageInfo<BannerListRes> bannerListResList = bannerDomain.bannerList(bannerListReq);
         model.addAttribute("bannerList",bannerListResList);
         return "banner_list";
     }

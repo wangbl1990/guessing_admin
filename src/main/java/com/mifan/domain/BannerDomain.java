@@ -1,5 +1,6 @@
 package com.mifan.domain;
 
+import com.github.pagehelper.PageInfo;
 import com.mifan.controller.request.AddBannerReq;
 import com.mifan.controller.request.BannerListReq;
 import com.mifan.controller.response.BannerListRes;
@@ -12,7 +13,7 @@ import java.util.List;
 public class BannerDomain {
 
 
-    public List<BannerListRes> bannerList(BannerListReq bannerListReq) {
+    public PageInfo<BannerListRes> bannerList(BannerListReq bannerListReq) {
         List<BannerListRes> resList = new ArrayList<BannerListRes>();
         BannerListRes res = new BannerListRes();
         res.setPicLink("www.baidu.com");
@@ -20,7 +21,9 @@ public class BannerDomain {
         res.setTitle("图片");
         res.setId("1");
         resList.add(res);
-        return resList;
+        PageInfo<BannerListRes> pageInfo = new PageInfo<BannerListRes>(resList);
+        pageInfo.setList(resList);
+        return pageInfo;
     }
 
     public List<BannerListRes> add(AddBannerReq addBannerReq) {

@@ -1,5 +1,8 @@
 package com.mifan.controller;
 
+import com.github.pagehelper.PageInfo;
+import com.mifan.controller.request.OrderListReq;
+import com.mifan.controller.request.SettleOrderListReq;
 import com.mifan.controller.response.OrderListRes;
 import com.mifan.controller.response.SettleOrderListRes;
 import com.mifan.domain.OrderDomain;
@@ -21,16 +24,16 @@ public class OrderController {
     private OrderDomain orderDomain;
 
     @RequestMapping("list")
-    public String orderList(Model model){
-        List<OrderListRes> orderList = orderDomain.orderList();
+    public String orderList(Model model, OrderListReq orderListReq){
+        PageInfo<OrderListRes> orderList = orderDomain.orderList(orderListReq);
         model.addAttribute("orderList",orderList);
         return "order_list";
     }
 
     @RequestMapping("settleList")
-    public String settleList(Model model){
-        List<SettleOrderListRes> settleOrderListRes = orderDomain.settleOrderList();
+    public String settleList(Model model, SettleOrderListReq settleOrderListReq){
+        PageInfo<SettleOrderListRes> settleOrderListRes = orderDomain.settleOrderList(settleOrderListReq);
         model.addAttribute("settleOrderList",settleOrderListRes);
-        return "order_list";
+        return "settle_order_list";
     }
 }
