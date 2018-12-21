@@ -38,10 +38,10 @@
 
                 <div class="ibox-content" style="padding-bottom:0;">
                     <div class="row">
-                        <form class="form-horizontal" id="selected" name="selected">
+                        <form class="form-horizontal" id="queryForm" name="queryForm" action="/order/list" method="post">
 
-                            <input type="hidden" id="currPage" value="${orderList.pageNum}">
-                            <input type="hidden" id="pageCount" value="${orderList.pages}">
+                            <input type="hidden" id="currPage" name = "pageNo" value="${orderList.pageNum}">
+                            <input type="hidden" id="pageCount" name = "pageSize" value="${orderList.pages}">
                             <table class="table table-bordered" style="margin-bottom: 0;">
                                 <tbody>
                                 <tr>
@@ -49,11 +49,11 @@
                                         用户：
                                     </td>
                                     <td width="30%">
-                                        <input type="text" class="form-control"  id="id" name="id">
+                                        <input type="text" class="form-control"  id="userName" name="userName">
                                     </td>
                                     <td class="input-group-addon" width="15%">订单号：</td>
                                     <td width="30%">
-                                        <input type="text" class="form-control" id="title" name="title">
+                                        <input type="text" class="form-control" id="orderId" name="orderId">
                                     </td>
                                 </tr>
                                 </tbody>

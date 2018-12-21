@@ -31,6 +31,7 @@ public class BannerController {
         return "banner_list";
     }
 
+    @RequestMapping("add")
     public String add(Model model, AddBannerReq addBannerReq){
         List<BannerListRes> bannerListResList =  bannerDomain.add(addBannerReq);
         model.addAttribute("bannerList",bannerListResList);

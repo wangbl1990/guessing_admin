@@ -22,3 +22,8 @@ var addBtn = $("#addBtn");
 addBtn.click(function () {
     $("#myModal").modal("show");
 });
+
+var queryBtn = $("#srhBtn");
+queryBtn.click(function () {
+    $("#queryForm").submit();
+})
