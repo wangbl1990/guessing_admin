@@ -107,7 +107,7 @@
                 <div class="ibox-content" style="padding:0; border-top:none;width: auto;">
                     <div class="row">
                         <div class="col-sm-12">
-                            <form class="form-horizontal" id="borrowerQueryForm">
+                            <form class="form-horizontal" id="addBanner" action="/banner/add" enctype="multipart/form-data" method="post">
                                 <table class="table table-bordered" style="margin-bottom: 0;">
                                     <tbody>
                                     <tr>
@@ -121,9 +121,9 @@
                                     <tr>
                                         <td class="input-group-addon" width="15%">图片</td>
                                         <td width="25%">
-                                            <form class="form-horizontal validate[required]"  enctype="multipart/form-data" method="post"  id="uploadForm">
-                                                <input id="fileinput" name="picPath" multiple type="file">
-                                            </form>
+                                            <%--<form class="form-horizontal validate[required]"  enctype="multipart/form-data" method="post"  id="uploadForm">--%>
+                                                <input id="fileinput" name="bannerFile" type="file">
+                                            <%--</form>--%>
                                         </td>
                                     </tr>
                                     <tr>
@@ -137,7 +137,7 @@
                                 </table>
                                 <div class="panel-footer clear">
                                     <div class="pull-right">
-                                        <button class="btn btn-primary btn-xs" type="button" id="srhSmtBtn">
+                                        <button class="btn btn-primary btn-xs" type="button" id="addBannerBtn">
                                             新增
                                         </button>
                                     </div>

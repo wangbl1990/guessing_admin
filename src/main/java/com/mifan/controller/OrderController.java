@@ -5,12 +5,11 @@ import com.mifan.controller.request.OrderListReq;
 import com.mifan.controller.request.SettleOrderListReq;
 import com.mifan.controller.response.OrderListRes;
 import com.mifan.controller.response.SettleOrderListRes;
-import com.mifan.domain.OrderDomain;
+import com.mifan.domain.BossOrderDomain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import java.util.List;
 
 /**
  * @auther wangbinlei
@@ -21,7 +20,7 @@ import java.util.List;
 public class OrderController {
 
     @Autowired
-    private OrderDomain orderDomain;
+    private BossOrderDomain orderDomain;
 
     @RequestMapping("list")
     public String orderList(Model model, OrderListReq orderListReq){

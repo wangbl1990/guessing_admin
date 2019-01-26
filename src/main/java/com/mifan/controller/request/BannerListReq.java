@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class BannerListReq {
 
-    private int pageNo;
+    private int pageNo =1;
 
-    private int pageSize;
+    private int pageSize = 10;
 }

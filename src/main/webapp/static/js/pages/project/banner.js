@@ -22,3 +22,8 @@ var addBtn = $("#addBtn");
 addBtn.click(function () {
     $("#myModal").modal("show");
 });
+
+var addBannerBtn = $("#addBannerBtn");
+addBannerBtn.click(function () {
+    $("#addBanner").submit();
+})

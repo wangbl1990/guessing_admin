@@ -10,12 +10,14 @@
 
     <dubbo:application name="mifan-guessing" />
 
-    <dubbo:registry protocol="zookeeper" address="10.170.1.44:2181"/>
+    <dubbo:registry protocol="zookeeper" address="192.168.1.155:2181"/>
 
     <dubbo:monitor protocol="registry"/>
 
     <dubbo:consumer timeout="5000"/>
 
-    <dubbo:reference id="userService" interface="com.mifan.guessing.rpcService.BannerService"/>
+    <dubbo:reference id="guessingBannerService" version="1.0.0" interface="com.mifan.guessing.service.BannerService"/>
+
+    <dubbo:reference id="guessingOrderService" version="1.0.0" interface="com.mifan.guessing.service.OrderService"/>
 
 </beans>

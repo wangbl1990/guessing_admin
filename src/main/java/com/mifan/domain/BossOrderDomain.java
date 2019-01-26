@@ -13,8 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 @Component
-public class OrderDomain {
-
+public class BossOrderDomain {
 
     /**
      * 订单列表
