@@ -24,15 +24,26 @@ public class OrderController {
 
     @RequestMapping("list")
     public String orderList(Model model, OrderListReq orderListReq){
+        if(0 == orderListReq.getPageNum()){
+            orderListReq.setPageNum(1);
+        }
         PageInfo<OrderListRes> orderList = orderDomain.orderList(orderListReq);
         model.addAttribute("orderList",orderList);
+        model.addAttribute("pageNum",orderListReq.getPageNum());
+        model.addAttribute("userName",orderListReq.getUserName());
+        model.addAttribute("orderId",orderListReq.getOrderId());
         return "order_list";
     }
 
     @RequestMapping("settleList")
     public String settleList(Model model, SettleOrderListReq settleOrderListReq){
+        if(0 == settleOrderListReq.getPageNum()){
+            settleOrderListReq.setPageNum(1);
+        }
         PageInfo<SettleOrderListRes> settleOrderListRes = orderDomain.settleOrderList(settleOrderListReq);
         model.addAttribute("settleOrderList",settleOrderListRes);
+        model.addAttribute("pageNum",settleOrderListReq.getPageNum());
+        model.addAttribute("orderId",settleOrderListReq.getOrderId());
         return "settle_order_list";
     }
 }

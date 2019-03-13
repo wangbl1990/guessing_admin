@@ -10,9 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class SettleOrderListReq {
 
-    private int pageNo;
+    private int pageNum;
 
-    private int pageSize;
+    private int pageSize =10;
 
     private String userName;
 

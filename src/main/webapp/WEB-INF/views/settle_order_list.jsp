@@ -17,8 +17,8 @@
     <!-- CSS插件 -->
     <link href="/static/css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="/static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
-    <link href="/static/css/plugins/pages/jquery.page.css" rel="stylesheet">
-
+    <%--<link href="/static/css/plugins/pages/jquery.page.css" rel="stylesheet">--%>
+    <link rel="stylesheet" type="text/css" href="/static/css/zxf_page.css"/>
     <!-- CSS页面 -->
     <link href="/static/css/style.min.css" rel="stylesheet">
 
@@ -40,20 +40,20 @@
                 <div class="ibox-content" style="padding-bottom:0;">
                     <div class="row">
                         <form class="form-horizontal" id="queryForm" name="selected" method="post" action="/order/settleList">
-                            <input type="hidden" id="currPage" name="pageNo" value="${settleOrderList.pageNum}">
-                            <input type="hidden" id="pageCount" naem="pageSize" value="${settleOrderList.pages}">
+                            <input type="hidden" id="currPage" name = "pageNum" value="${pageNum}">
+                            <input type="hidden" id="pageCount" name = "pageCount" value="${settleOrderList.pages}">
                             <table class="table table-bordered" style="margin-bottom: 0;">
                                 <tbody>
                                 <tr>
-                                    <td class="input-group-addon" width="20%">
-                                        用户：
-                                    </td>
-                                    <td width="30%">
-                                        <input type="text" class="form-control"  id="userName" name="userName">
-                                    </td>
+                                    <%--<td class="input-group-addon" width="20%">--%>
+                                        <%--用户：--%>
+                                    <%--</td>--%>
+                                    <%--<td width="30%">--%>
+                                        <%--<input type="text" class="form-control"  id="userName" name="userName">--%>
+                                    <%--</td>--%>
                                     <td class="input-group-addon" width="15%">订单号：</td>
                                     <td width="30%">
-                                        <input type="text" class="form-control" id="orderId" name="orderId">
+                                        <input type="text" class="form-control" id="orderId" name="orderId" value="${orderId}">
                                     </td>
                                 </tr>
                                 </tbody>
@@ -88,7 +88,7 @@
                                         <td>${item.orderId}</td>
                                         <td>${item.id}</td>
                                         <td>${item.orderAmount}</td>
-                                        <td>${item.settleIncome}</td>
+                                        <td>${item.settleIncomeLose}</td>
                                         <td>${item.type}</td>
                                         <td>${item.eventType}</td>
                                         <td>${item.eventName}</td>
@@ -103,7 +103,7 @@
                             <div class="ibox-footer clear">
                                 <div class="pull-right">
                                     <!--分页 开始-->
-                                    <div class="tcdPageCode" id="tcdPagehide"></div>
+                                    <div class="zxf_pagediv"></div>
                                     <!--分页 结束-->
                                 </div>
                             </div>
@@ -126,8 +126,8 @@
 <script src="/static/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
 <script src="/static/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
 <script src="/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
-<script src="/static/js/plugins/pages/jquery.page.js"></script>
-
+<%--<script src="/static/js/plugins/pages/jquery.page.js"></script>--%>
+<script type="text/javascript" src="/static/js/zxf_page.js"></script>
 <!-- JS页面 -->
 <script src="/static/js/pages/project/settle_order_list.js"></script>
 

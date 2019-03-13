@@ -16,11 +16,9 @@ public class SettleOrderListRes {
 
     private String orderId;
 
-    private BigDecimal orderAmount;
+    private Long orderAmount;
 
-    private BigDecimal settleIncome;
-
-    private BigDecimal settleLoss;
+    private Long settleIncomeLose;
 
     private String type;
 
@@ -36,6 +34,8 @@ public class SettleOrderListRes {
 
     private Date createTime;
 
-    private String userNikeName;
+    private String userCode;
+
+    private String userName;
 
 }

@@ -16,7 +16,8 @@
     <!-- CSS插件 -->
     <link href="/static/css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="/static/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
-    <link href="/static/css/plugins/pages/jquery.page.css" rel="stylesheet">
+    <%--<link href="/static/css/plugins/pages/jquery.page.css" rel="stylesheet">--%>
+    <link rel="stylesheet" type="text/css" href="/static/css/zxf_page.css"/>
 
     <!-- CSS页面 -->
     <link href="/static/css/style.min.css" rel="stylesheet">
@@ -40,8 +41,8 @@
                     <div class="row">
                         <form class="form-horizontal" id="queryForm" name="queryForm" action="/order/list" method="post">
 
-                            <input type="hidden" id="currPage" name = "pageNo" value="${orderList.pageNum}">
-                            <input type="hidden" id="pageCount" name = "pageSize" value="${orderList.pages}">
+                            <input type="hidden" id="currPage" name = "pageNum" value="${pageNum}">
+                            <input type="hidden" id="pageCount" name = "pageCount" value="${orderList.pages}">
                             <table class="table table-bordered" style="margin-bottom: 0;">
                                 <tbody>
                                 <tr>
@@ -49,11 +50,11 @@
                                         用户：
                                     </td>
                                     <td width="30%">
-                                        <input type="text" class="form-control"  id="userName" name="userName">
+                                        <input type="text" class="form-control"  id="userName" name="userName" value="${userName}">
                                     </td>
                                     <td class="input-group-addon" width="15%">订单号：</td>
                                     <td width="30%">
-                                        <input type="text" class="form-control" id="orderId" name="orderId">
+                                        <input type="text" class="form-control" id="orderId" name="orderId" value="${orderId}">
                                     </td>
                                 </tr>
                                 </tbody>
@@ -74,7 +75,7 @@
                                     <th>订单米粒</th>
                                     <th>水位格式</th>
                                     <th>状态</th>
-                                    <th>管理</th>
+                                    <%--<th>管理</th>--%>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -86,10 +87,10 @@
                                         <td>${item.requestAmount}</td>
                                         <td>-</td>
                                         <td>${item.status}</td>
-                                        <td>
-                                            <button class="btn btn-primary btn-xs" type="button" >编辑</button>
-                                            <button class="btn btn-primary btn-xs" type="button" >删除</button>
-                                        </td>
+                                        <%--<td>--%>
+                                            <%--<button class="btn btn-primary btn-xs" type="button" >编辑</button>--%>
+                                            <%--<button class="btn btn-primary btn-xs" type="button" >删除</button>--%>
+                                        <%--</td>--%>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
@@ -98,7 +99,7 @@
                             <div class="ibox-footer clear">
                                 <div class="pull-right">
                                     <!--分页 开始-->
-                                    <div class="tcdPageCode" id="tcdPagehide"></div>
+                                    <div class="zxf_pagediv"></div>
                                     <!--分页 结束-->
                                 </div>
                             </div>
@@ -121,7 +122,8 @@
 <script src="/static/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
 <script src="/static/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
 <script src="/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
-<script src="/static/js/plugins/pages/jquery.page.js"></script>
+<%--<script src="/static/js/plugins/pages/jquery.page.js"></script>--%>
+<script type="text/javascript" src="/static/js/zxf_page.js"></script>
 
 <!-- JS页面 -->
 <script src="/static/js/pages/project/order_list.js"></script>

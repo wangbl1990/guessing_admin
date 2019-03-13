@@ -6,19 +6,21 @@ $(function () {
         $pageC = $("#pageCount");
     var curpage = parseInt($curP.val());
     var pageCount = parseInt($pageC.val());
-    var $tcdPage = $(".tcdPageCode");
-    $tcdPage.createPage({
-        pageCount: pageCount,
+    //翻页
+    $(".zxf_pagediv").createPage({
+        pageNum: pageCount,
         current: curpage,
-        backFn: function (p) {
-            $curP.val(p);
-            tableFun();
+        backfun: function(e) {
+            //console.log(e);//回调
+            // alert(e.current);
+            $curP.val(e.current);
+            $("#queryForm").submit();
         }
     });
 })
 
 
-var addBtn = $("#addBtn");
-addBtn.click(function () {
-    $("#myModal").modal("show");
+var srhBtn = $("#srhBtn");
+srhBtn.click(function () {
+    $("#queryForm").submit();
 });

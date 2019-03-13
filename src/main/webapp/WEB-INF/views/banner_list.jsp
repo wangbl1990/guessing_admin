@@ -46,7 +46,7 @@
                         </div>
                         <form id = "listForm">
                             <input type="hidden" id="currPage" value="${bannerList.pageNum}">
-                            <input type="hidden" id="pageCount" value="${bannerList.pages}">
+                            <input type="hidden" id="pageCount" value="${bannerList.pageSize}">
                         </form>
                         <div class="col-sm-12" style="height: auto;">
                             <!-- 表格部分 开始 -->

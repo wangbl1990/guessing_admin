@@ -24,7 +24,7 @@ public class BossBannerDomain {
 
     public PageInfo<BannerListRes> bannerList(BannerListReq bannerListReq) {
         BossBannerListRequest request = new BossBannerListRequest();
-        request.setPageNum(bannerListReq.getPageNo());
+        request.setPageNum(bannerListReq.getPageNum());
         request.setPageSize(bannerListReq.getPageSize());
         BaseResponse<PageInfo<BossBannerListResponse>> list = bannerService.list(request);
         PageInfo pageInfo = list.getResult();
